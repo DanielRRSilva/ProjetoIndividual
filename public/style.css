@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@font-face {
+    font-family: 'quartell';
+    src: url(assets/fonts/Quartell\ VF.ttf) format(truetype);
+    font-size: 16px;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'magnifico-nighttime';
+    src: url(assets/fonts/magnifico-nighttime-itc-std.otf) format(opentype);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+a {
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+nav {
+    width: 80%;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+ width: 40rem;
+}
+
+.whiteBar {
+    background-color: #fff;
+    width: 100vw;
+    height: 40px;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: static;
+    z-index: 1;
+}
+
+.logo_title {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 10px;
+}
+
+.logo_title h1 {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+.amarelo {
+    color: #ffdd00;
+}
+
+.logo_title img {
+    width: 3.5rem;
+}
+
+.navBar {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    right: -500px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.active.navBar {
+    pointer-events: fill;
+    opacity: 1;
+    left: 300px;
+}
+
+.navBar a {
+    font-family: 'quartell', Times, serif;
+    color: black;
+    font-size: 18px;
+}
+
+.navBar a:hover {
+    border-radius: 16px;
+    background-color: #ffdd00;
+    box-shadow: 
+     rgba(0, 0, 0, 0.5) 2px 2px,
+     rgba(0, 0, 0, 0.4) 4px 4px,
+     rgba(0, 0, 0, 0.3) 6px 6px,
+     rgba(0, 0, 0, 0.2) 7px 7px,
+     rgba(0, 0, 0, 0.1) 9px 9px;
+}
+
+.iconBox {
+    width: fit-content;
+    height: auto;
+    cursor: pointer;
+}
+
+.line1, .line2, .line3 {
+    width: 55px;
+    height: 5px;
+    margin: 8px 5px;
+    background-color: #ffdd00;
+    border-radius: 50px;
+    transition: 0.2s;
+}
+
+.active .line1 {
+    transform: translate(0px, 12.5px) rotate(45deg);
+}
+
+.active .line2 {
+    opacity: 0;
+}
+
+.active .line3 {
+    transform: translate(0px, -12.5px) rotate(-45deg);
+}
+
+.banner {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstPage .fundoPagina1 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url(https://wallpapersmug.com/u/061781/pubg-battlegrounds-2023.jpg);
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 15%;
+}
+
+.conteudo h2 {
+    font-family: 'quartell', Times, serif;
+    color: #ffdd00;
+    font-weight: bold;
+    font-size: 100px;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0px 0px 20px;
+}
+
+.conteudo p {
+    font-family: 'magnifico-nighttime', Times, serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+.frase1 {
+    width: fit-content;
+    color: #fff;
+}
+
+.frase2 {
+    color: #ffdd00;
+}
+
+.secondPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondPage .fundoPagina2 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url(https://cutewallpaper.org/21/8-bit-backgrounds/15080929.jpg);
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.secondPage img {
+    z-index: 2;
+    width: 30%;
+}
+
+.secondPage img:hover {
+    transform: scale();
+    transition: 0.2s;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.text h2 {
+    font-family: 'quartell', Times, serif;
+    color: #ffdd00;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 40px;
+    margin: 0px 0px 30px;
+}
+
+.text p {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.thirdPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+}
+
+.fourthPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: orange;
+}
