@@ -1,0 +1,130 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text p {
+    width: 500px;
+    text-align: center;
+}
+
+.bannerGames {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide, .slidefirst {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    transition: 1s;
+}
+
+.slidefirst {
+    margin-left: 0%;
+}
+
+.orgsReferencia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orgsReferencia img {
+    width: 100px;
+}
+
+.orgsReferencia img:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.backgroundR6 {
+    background-image: url(assets/img/R6Background.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundLol {
+    background-image: url(assets/img/LoLBackground.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundCSGO {
+    background-image: url(assets/img/csgoBackground.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundRocketLeague {
+    background-image: url(assets/img/RocketLeagueBackground.png);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundOverwatch {
+    background-image: url(assets/img/OverwatchBackground.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.navigationGames {
+    width: 70%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ffdd00;
+    border: 5px #fff solid;
+    border-radius: 100px;
+    position: absolute;
+    bottom: 15px;
+    left: 205px;    
+}
+
+.navigationGames img  {
+    width: 75px;
+    cursor: pointer;
+    place-content: center;
+}
+
+.active {
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 100%;
+    padding: 10px;
+}

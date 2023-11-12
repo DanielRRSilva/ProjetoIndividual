@@ -19,6 +19,8 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-color: black;
     overflow-x: hidden;
 }
@@ -29,14 +31,14 @@ a {
     text-align: center;
 }
 
-nav {
+.header nav {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-ul {
+.header ul {
     list-style: none;
     width: 100%;
     display: flex;
@@ -44,13 +46,13 @@ ul {
     justify-content: space-evenly;
 }
 
-li {
+.header li {
     margin: 0px 2px;
     display: flex;
     justify-content: center;
 }
 
-p {
+.bannerHome p {
  width: 40rem;
 }
 
@@ -186,8 +188,7 @@ p {
     transform: translate(0px, -12.5px) rotate(-45deg);
 }
 
-.banner {
-    overflow: hidden;
+.bannerHome {
     display: flex;
     flex-direction: column;
 }
@@ -210,6 +211,15 @@ p {
 .text p {
     font-family: 'Open Sans', sans-serif;
     color: #fff;
+}
+
+/* Personalização do h3 da pagina games */
+.orgsReferencia h3 {
+    font-family: 'quartell', Times, serif;
+    color: #ffdd00;
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
 }
 
 .firstPage{
@@ -339,4 +349,52 @@ p {
 
 .fourthPage .text p {
     text-align: center;
+}
+
+.orgs {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: -1;
+}
+
+.carousel {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menuOrgs {
+    width: 35%;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffdd00;
+    border: 3px solid #fff;
+    
+}
+
+.menuOrgs img {
+    width: 100px;
+    height: 100px;
+}
+
+.menuOrgs img {
+    margin-top: 20px;
+}
+
+.logoTimes {
+    margin-top: 15px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
 }
