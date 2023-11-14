@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <title>TheControl|Forms</title>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="logo_title">
+            <img src="assets/img/logo.png" alt="Logo">
+            <h1 >
+                <span class="preto">T</span><span class="amarelo">h</span><span class="preto">e</span> 
+                <span class="amarelo">C</span><span class="preto">o</span><span class="amarelo">n</span><span class="preto">t</span><span class="amarelo">r</span><span class="preto">o</span><span class="amarelo">l</span>
+            </h1>
+        </div>
+        <div class="navBar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Orgs</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="#">Forms</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><img src="assets/img/do-utilizador.png" alt="user-icon"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="iconBox">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+    <div class="bannerForms">
+        <div class="text"><h2>Formulário Gamer</h2></div>
+       <div class="cardAmarelo">
+            <div class="inputs">
+                <div class="inputsPT1">
+                    <div class="entrada">
+                        <label for="nomeUser">Nome:</label>
+                        <input type="text" id="nomeUser">
+                    </div>
+                    <div class="entrada">
+                        <label for="idadeUsuario">Idade:</label>
+                        <input type="text" id="idadeUser">
+                    </div>
+                    <div class="entrada">
+                        <label for="generoUser">Gênero:</label>
+                        <select name="generos" id="generoUser">
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="entrada">
+                        <label>Já jogou ou joga ?</label>
+                        <div class="checkSimNao">
+                            <div class="checkSim">
+                                <input type="checkbox" id="respostaSimJogo">
+                                <label for="respostaSimJogo">Sim</label>
+                            </div>
+                            <div class="checkNao">
+                                <input type="checkbox" id="respostaNaoJogo">
+                                <label for="respostaNaoJogo">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entrada">
+                        <label for="qtdJogos">Se sim, quantos jogos?</label>
+                        <input type="text" id="qtdJogos">
+                    </div>
+                </div>
+                <div class="inputsPT2">
+                    <div class="entrada">
+                        <label for="jogoFavUser">Qual seu jogo favorito?</label>
+                        <input type="text" id="jogoFavUser">
+                    </div>
+                    <div class="entrada">
+                        <label>Seu jogo favorito tem cenário competitivo?</label>
+                        <div class="checkSimNao">
+                            <div class="checkSim">
+                                <input type="checkbox" id="respostaSimComp">
+                                <label for="respostaSimComp">Sim</label>
+                            </div>
+                            <div class="checkNao">
+                                <input type="checkbox" id="respostaNaoComp">
+                                <label for="respostaNaoComp">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entrada">
+                        <label>Você o acompanha?</label>
+                        <div class="checkSimNao">
+                            <div class="checkSim">
+                                <input type="checkbox" id="respostaSimAcomp">
+                                <label for="respostaSimAcomp">Sim</label>
+                            </div>
+                            <div class="checkNao">
+                                <input type="checkbox" id="respostaNaoAcomp">
+                                <label for="respostaNaoAcomp">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entrada">
+                        <label for="timeTorceUser">Para qual org você torce?</label>
+                        <input type="text" id="timeTorceUser">
+                    </div>
+                </div>
+            </div>
+            <div class="divArcade">
+                <div class="manchaFundo">
+                    <img src="assets/img/arcade.png" alt="">
+                </div>
+            </div>
+       </div>
+    </div>
+</body>
+</html>
+
+<script src="navBar.js"></script>

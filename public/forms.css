@@ -1,0 +1,113 @@
+.header {
+    position: absolute;
+}
+
+.bannerForms {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.text h2 {
+    margin: 0;
+}
+
+.cardAmarelo {
+    width: 85%;
+    height: 75%;
+    background-color: #ffdd00;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.inputs {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.inputsPT1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 30px;  
+}
+
+.inputs input {
+    width: 60%;
+    height: 20px;
+    border: none;
+    margin-top: 10px;
+}
+
+.inputs select {
+    height: 20px;
+    border: none;
+    margin-top: 10px;
+}
+
+.entrada, .checkSim, .checkNao {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkSim, .checkNao {
+    align-items: center;
+    margin: 5px;
+}
+
+.checkSimNao {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputsPT2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+}
+
+.inputsPT2 label {
+    text-align: center;
+}
+
+.inputsPT2 .entrada {
+    align-items: center;
+}
+
+.divArcade {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manchaFundo {
+    width: 450px;
+    height: 450px;
+    background-image: url(assets/img/fundoMancha.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manchaFundo img  {
+    width: 300px;
+}
+
+.manchaFundo img:hover {
+    transform: scale(1.2);
+    transition: 1s;
+}
