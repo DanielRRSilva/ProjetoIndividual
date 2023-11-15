@@ -11,6 +11,18 @@
     font-size: 16px;
     font-weight: normal;
 }
+@font-face {
+    font-family: 'super-legendBoy';
+    src: url(assets/fonts/SuperLegendBoy-4w8Y.ttf) format(truetype);
+    font-size: 16px;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'old-school-adventure';
+    src: url(assets/fonts/OldSchoolAdventures-42j9.ttf) format(truetype);
+    font-size: 16px;
+    font-weight: normal;
+}
 
 * {
     margin: 0;
@@ -34,10 +46,50 @@ a {
     justify-content: center;
 }
 
-label {
+.bannerForms label {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    color: #000;
+}
+
+/* Personalização das labels e do botão no cadastro */
+.bannerCadastro label, .bannerLogin label {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 14px;
     color: #fff;
+}
+
+.bannerCadastro .cardCadastro button, .bannerLogin .cardLogin button {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 20px;
+    color: #000;
+}
+
+.bannerCadastro .cardText h2, .bannerLogin .cardText h2 {
+    width: 100%;
+    font-family: 'super-legendBoy', Times, serif;
+    text-align: center;
+    font-size: 35px;
+    color: #ffdd00;
+}
+
+.bannerCadastro .cardText p, .bannerLogin .cardText p {
+    width: 100%;
+    font-family:'super-legendBoy', Times, serif;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.bannerLogin .cardLogin .criarConta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family:'super-legendBoy', Times, serif;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
 }
 
 .header nav {

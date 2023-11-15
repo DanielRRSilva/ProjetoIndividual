@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cadastro_login.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <title>The Control|Login</title>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="logo_title">
+            <img src="assets/img/logo.png" alt="Logo">
+            <h1 >
+                <span class="preto">T</span><span class="amarelo">h</span><span class="preto">e</span> 
+                <span class="amarelo">C</span><span class="preto">o</span><span class="amarelo">n</span><span class="preto">t</span><span class="amarelo">r</span><span class="preto">o</span><span class="amarelo">l</span>
+            </h1>
+        </div>
+        <div class="navBar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Orgs</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="cadastro_login.html">Login</a></li>
+                    <li><img src="assets/img/do-utilizador.png" alt="user-icon"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="iconBox">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+    <div class="bannerCadastroLogin">
+        <div class="fundoPaginaCadastroLogin"></div>
+        <div class="bannerLogin" id="bannerLogin">
+            <div class="cardMain">
+                <div class="cardText">
+                    <h2>Bem vindo<br>De volta</h2>
+                    <p>Entre na sua conta e continue se aventurando</p>
+                </div>
+                <div class="cardLogin">
+                    <div class="entrada">
+                        <label for="emailLoginUser">E-mail:</label>
+                        <input type="text" id="emailLoginUser">
+                    </div>
+                    <div class="entrada">
+                        <label for="senhaLoginUser">Senha:</label>
+                        <input type="text" id="senhaLoginUser">
+                    </div>
+                    <button>Resume Game</button>
+                    <p class="criarConta">Crie sua <a href="#" onclick="irBannerCadastro()">Conta</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="bannerCadastro">
+            <div class="cardMain">
+                <div class="cardCadastro">
+                    <div class="entrada">
+                        <label for="userName">User Name:</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="entrada">
+                        <label for="emailUser">E-mail:</label>
+                        <input type="email" id="emailUser" required>
+                    </div>
+                    <div class="entrada">
+                        <label for="senhaUser">Senha:</label>
+                        <input type="password" id="senhaUser" required>
+                    </div>
+                    <div class="entrada">
+                        <label for="confirmarSenhaUser">Confirmar Senha:</label>
+                        <input type="password" id="confirmarSenhaUser" required>
+                    </div>
+                    <button onclick="cadastrar()">Start Game</button>
+                </div>
+                <div class="cardText">
+                    <h2>Bem vindo<br>à<br>The Control</h2>
+                    <p>
+                        Se cadastre para entrar nessa aventura no mundo dos eSports.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="navBar.js"></script>
+<script src="cadastro_login.js"></script>
