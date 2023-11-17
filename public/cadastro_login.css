@@ -96,3 +96,50 @@
     margin-top: 5px;
     text-align: center;
 }
+
+.entrada img {
+    width: 40px;
+    position: absolute;
+}
+
+#setaEmailLogin {
+    top: 63px;
+    right: 245px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#setaSenhaLogin {
+    top: 162px;
+    right: 245px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#setaUserNameCadastro {
+    top: 44px;
+    left: 43px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#setaEmailCadastro {
+    top: 123px;
+    left: 43px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#setaSenhaCadastro {
+    top: 202px;
+    left: 43px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#setaConfirmaSenhaCadastro {
+    top: 281px;
+    left: 43px;
+    opacity: 0;
+    transition: 0.3s;
+}

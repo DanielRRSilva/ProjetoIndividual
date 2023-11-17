@@ -1,25 +1,85 @@
 var bannerLogin = document.getElementById("bannerLogin")
+//inpust cadastro login
 var inputEmailLogin = document.getElementById("emailLoginUser")
 var inputSenhaLogin = document.getElementById("senhaLoginUser")
+var inputUserNameCadastro = document.getElementById("userName")
+var inputEmailUserCadastro = document.getElementById("emailUser")
+var inputSenhaUserCadastro = document.getElementById("senhaUser")
+var inputConfirmarSenhaUserCadastro = document.getElementById("confirmarSenhaUser")
+//setas para cada input
+var setaEmailLogin = document.getElementById("setaEmailLogin")
+var setaSenhaLogin = document.getElementById("setaSenhaLogin")
+var setaUserNameCadastro = document.getElementById("setaUserNameCadastro")
+var setaEmailCadastro = document.getElementById("setaEmailCadastro")
+var setaSenhaCadastro = document.getElementById("setaSenhaCadastro")
+var setaConfirmaSenhaCadastro = document.getElementById("setaConfirmaSenhaCadastro")
 
 function irBannerCadastro() {
     bannerLogin.style.marginLeft = "-50%"
 }
 
 inputEmailLogin.addEventListener("focus",()=> {
-    inputEmailLogin.style.backgroundColor ="red"
-    inputSenhaLogin.style.backgroundColor = "white"
+    setaEmailLogin.style.opacity = "1"
+    setaSenhaLogin.style.opacity = "0"
+    setaUserNameCadastro.style.opacity = "0"
+    setaEmailCadastro.style.opacity = "0"
+    setaSenhaCadastro.style.opacity = "0"
+    setaConfirmaSenhaCadastro.style.opacity = "0"
 })
 
 inputSenhaLogin.addEventListener("focus",()=> {
-    inputSenhaLogin.style.backgroundColor = "red"
-    inputEmailLogin.style.backgroundColor ="white"
+    setaEmailLogin.style.opacity = "0"
+    setaSenhaLogin.style.opacity = "1"
+    setaUserNameCadastro.style.opacity = "0"
+    setaEmailCadastro.style.opacity = "0"
+    setaSenhaCadastro.style.opacity = "0"
+    setaConfirmaSenhaCadastro.style.opacity = "0"
+})
+
+inputUserNameCadastro.addEventListener("focus", ()=> {
+    setaEmailLogin.style.opacity = "0"
+        setaSenhaLogin.style.opacity = "0"
+        setaUserNameCadastro.style.opacity = "1"
+        setaEmailCadastro.style.opacity = "0"
+        setaSenhaCadastro.style.opacity = "0"
+        setaConfirmaSenhaCadastro.style.opacity = "0"
+})
+
+inputEmailUserCadastro.addEventListener("focus", ()=> {
+    setaEmailLogin.style.opacity = "0"
+    setaSenhaLogin.style.opacity = "0"
+    setaUserNameCadastro.style.opacity = "0"
+    setaEmailCadastro.style.opacity = "1"
+    setaSenhaCadastro.style.opacity = "0"
+    setaConfirmaSenhaCadastro.style.opacity = "0"
+})
+
+inputSenhaUserCadastro.addEventListener("focus", ()=> {
+    setaEmailLogin.style.opacity = "0"
+    setaSenhaLogin.style.opacity = "0"
+    setaUserNameCadastro.style.opacity = "0"
+    setaEmailCadastro.style.opacity = "0"
+    setaSenhaCadastro.style.opacity = "1"
+    setaConfirmaSenhaCadastro.style.opacity = "0"
+})
+
+inputConfirmarSenhaUserCadastro.addEventListener("focus",()=> {
+    setaEmailLogin.style.opacity = "0"
+    setaSenhaLogin.style.opacity = "0"
+    setaUserNameCadastro.style.opacity = "0"
+    setaEmailCadastro.style.opacity = "0"
+    setaSenhaCadastro.style.opacity = "0"
+    setaConfirmaSenhaCadastro.style.opacity = "1"
 })
 
 document.addEventListener("click",(e)=> {
-    if(!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target)){
-        inputEmailLogin.style.backgroundColor ="white"
-        inputSenhaLogin.style.backgroundColor = "white"
+    if(!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target) && !inputConfirmarSenhaUserCadastro.contains(e.target) && !inputSenhaUserCadastro.contains(e.target) && !inputEmailUserCadastro.contains(e.target) && !inputUserNameCadastro.contains(e.target)){
+        setaEmailLogin.style.opacity = "0"
+        setaSenhaLogin.style.opacity = "0"
+        setaUserNameCadastro.style.opacity = "0"
+        setaEmailCadastro.style.opacity = "0"
+        setaSenhaCadastro.style.opacity = "0"
+        setaConfirmaSenhaCadastro.style.opacity = "0"
     }
 })
 
