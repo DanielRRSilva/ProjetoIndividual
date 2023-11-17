@@ -6,6 +6,23 @@ function irBannerCadastro() {
     bannerLogin.style.marginLeft = "-50%"
 }
 
+inputEmailLogin.addEventListener("focus",()=> {
+    inputEmailLogin.style.backgroundColor ="red"
+    inputSenhaLogin.style.backgroundColor = "white"
+})
+
+inputSenhaLogin.addEventListener("focus",()=> {
+    inputSenhaLogin.style.backgroundColor = "red"
+    inputEmailLogin.style.backgroundColor ="white"
+})
+
+document.addEventListener("click",(e)=> {
+    if(!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target)){
+        inputEmailLogin.style.backgroundColor ="white"
+        inputSenhaLogin.style.backgroundColor = "white"
+    }
+})
+
 function cadastrar() {
 
     var user = userName.value
