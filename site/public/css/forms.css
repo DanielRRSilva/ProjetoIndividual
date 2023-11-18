@@ -51,31 +51,22 @@
 
 .inputs input {
     width: 70%;
-    height: 20px;
+    height: 25px;
     border: none;
     margin-top: 10px;
+    text-align: center;
 }
 
 .inputs select {
-    height: 20px;
+    height: 25px;
     border: none;
     margin-top: 10px;
 }
 
-.entrada, .checkSim, .checkNao {
+.entrada {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.checkSim, .checkNao {
-    align-items: center;
-    margin: 5px;
-}
-
-.checkSimNao {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .inputsPT2 {

@@ -46,6 +46,10 @@ a {
     justify-content: center;
 }
 
+input, select {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .bannerForms label {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
