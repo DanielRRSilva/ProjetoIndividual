@@ -129,7 +129,7 @@
 .manchaFundo {
     width: 420px;
     height: 420px;
-    background-image: url(assets/img/fundoMancha.png);
+    background-image: url(../assets/img/fundoMancha.png);
     background-size: cover;
     display: flex;
     align-items: center;

@@ -54,7 +54,7 @@ body {
 }
 
 .backgroundR6 {
-    background-image: url(assets/img/R6Background.jpg);
+    background-image: url(../assets/img/R6Background.jpg);
     background-size: cover;
     position: absolute;
     z-index: -1;
@@ -64,7 +64,7 @@ body {
 }
 
 .backgroundLol {
-    background-image: url(assets/img/LoLBackground.jpg);
+    background-image: url(../assets/img/LoLBackground.jpg);
     background-size: cover;
     position: absolute;
     z-index: -1;
@@ -74,7 +74,7 @@ body {
 }
 
 .backgroundCSGO {
-    background-image: url(assets/img/csgoBackground.jpg);
+    background-image: url(../assets/img/csgoBackground.jpg);
     background-size: cover;
     position: absolute;
     z-index: -1;
@@ -84,7 +84,7 @@ body {
 }
 
 .backgroundRocketLeague {
-    background-image: url(assets/img/RocketLeagueBackground.png);
+    background-image: url(../assets/img/RocketLeagueBackground.png);
     background-size: cover;
     position: absolute;
     z-index: -1;
@@ -94,7 +94,7 @@ body {
 }
 
 .backgroundOverwatch {
-    background-image: url(assets/img/OverwatchBackground.jpg);
+    background-image: url(../assets/img/OverwatchBackground.jpg);
     background-size: cover;
     position: absolute;
     z-index: -1;

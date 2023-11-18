@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 @font-face {
     font-family: 'quartell';
-    src: url(assets/fonts/Quartell\ VF.ttf) format(truetype);
+    src: url(../assets/fonts/Quartell\ VF.ttf) format(truetype);
     font-size: 16px;
     font-weight: normal;
 }
 @font-face {
     font-family: 'magnifico-nighttime';
-    src: url(assets/fonts/magnifico-nighttime-itc-std.otf) format(opentype);
+    src: url(../assets/fonts/magnifico-nighttime-itc-std.otf) format(opentype);
     font-size: 16px;
     font-weight: normal;
 }
 @font-face {
     font-family: 'super-legendBoy';
-    src: url(assets/fonts/SuperLegendBoy-4w8Y.ttf) format(truetype);
+    src: url(../assets/fonts/SuperLegendBoy-4w8Y.ttf) format(truetype);
     font-size: 16px;
     font-weight: normal;
 }
 @font-face {
     font-family: 'old-school-adventure';
-    src: url(assets/fonts/OldSchoolAdventures-42j9.ttf) format(truetype);
+    src: url(../assets/fonts/OldSchoolAdventures-42j9.ttf) format(truetype);
     font-size: 16px;
     font-weight: normal;
 }

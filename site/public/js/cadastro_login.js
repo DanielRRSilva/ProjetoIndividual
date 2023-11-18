@@ -38,11 +38,11 @@ inputSenhaLogin.addEventListener("focus",()=> {
 
 inputUserNameCadastro.addEventListener("focus", ()=> {
     setaEmailLogin.style.opacity = "0"
-        setaSenhaLogin.style.opacity = "0"
-        setaUserNameCadastro.style.opacity = "1"
-        setaEmailCadastro.style.opacity = "0"
-        setaSenhaCadastro.style.opacity = "0"
-        setaConfirmaSenhaCadastro.style.opacity = "0"
+    setaSenhaLogin.style.opacity = "0"
+    setaUserNameCadastro.style.opacity = "1"
+    setaEmailCadastro.style.opacity = "0"
+    setaSenhaCadastro.style.opacity = "0"
+    setaConfirmaSenhaCadastro.style.opacity = "0"
 })
 
 inputEmailUserCadastro.addEventListener("focus", ()=> {
@@ -85,30 +85,73 @@ document.addEventListener("click",(e)=> {
 
 function cadastrar() {
 
-    var user = userName.value
-    var email = emailUser.value
-    var senha = senhaUser.value
+    var userVar = userName.value
+    var emailVar = emailUser.value
+    var senhaVar = senhaUser.value
     var confirmarSenha = confirmarSenhaUser.value
 
-    if(user == "" && email == "" && senha == "" && confirmarSenha == "") {
+    if(userVar == "" && emailVar == "" && senhaVar == "" && confirmarSenha == "") {
         alert(`Nenhum campo preenchido!!!`)
-    }else if(user == "") {
+        return false
+    }else if(userVar == "") {
         alert(`O campo do User Name é obrigatório!`)
-    }else if(user.match(/[0-9]/ig) || user.length < 3) {
+        return false;
+    }else if(userVar.match(/[0-9]/ig) || userVar.length < 3) {
         alert(`Caracteres Inválidos no User Name!`)
-    }else if(email == "") {
+        return false;
+    }else if(emailVar == "") {
         alert(`O campo do E-mail é obrigatório!`)
-    }else if(email.indexOf("@") < 0 || email.indexOf(".") < 0 ) {
+        return false;
+    }else if(emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0 ) {
         alert(`E-mail inválido!!`)
-    }else if(senha == "") {
+        return false;
+    }else if(senhaVar == "") {
         alert(`O campo senha é obrigatório!`)
-    }else if(senha.length < 8) {
+        return false;
+    }else if(senhaVar.length < 8) {
         alert(`A senha precisa ter 8 ou mais caracteres!`)
+        return false;
     }else if(confirmarSenha == "") {
         alert(`O campo confirmar senha é obrigatório!`)
-    }else if (confirmarSenha != senha) {
+        return false;
+    }else if (confirmarSenha != senhaVar) {
         alert(`A confirmação da senha não está igual!`)
+        return false;
     }else {
-        bannerLogin.style.marginLeft = "0"
+        
     }
+
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        userServer: userVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) { 
+            setTimeout(() => {
+                bannerLogin.style.marginLeft = "0"
+                sessionStorage.clear()
+            }, "2000")
+        } else {
+            if(resposta.status == 401){
+                alert(`O email cadastrado já existe!`)
+            }else{
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    return false;
 }
