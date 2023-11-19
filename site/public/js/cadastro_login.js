@@ -141,7 +141,7 @@ function cadastrar() {
             setTimeout(() => {
                 bannerLogin.style.marginLeft = "0"
                 sessionStorage.clear()
-            }, "2000")
+            }, "500")
         } else {
             if(resposta.status == 401){
                 alert(`O email cadastrado já existe!`)

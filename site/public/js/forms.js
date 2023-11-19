@@ -20,4 +20,39 @@ function enviarForm() {
     }else{
         alert(`td Certo`)
     }
+
+    fetch("/formulario/enviarFormulario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeFormulario: nomeForm,
+          idadeFormulario: Number(idadeForm),
+          generoFormulario: generoForm,
+          jogouFormulario: jogou,
+          qtdJogoFormulario: Number(qtdJogoForm),
+          jogoFavFormulario: jogoFav,
+          cenarioCompetitivoFormulario: cenarioCompetitivo,
+          acompanhaFormulario: acompanha,
+          timeUserFormulario: timeUser,
+        }),
+      })
+      .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) { 
+              setTimeout(() => {
+                  
+              }, "500")
+          } else {
+            throw "Houve um erro ao enviar o formulario!";              
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+      });
+      return false;
 }
