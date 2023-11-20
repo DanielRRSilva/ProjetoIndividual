@@ -200,7 +200,7 @@ input, select {
 .active.navBar {
     pointer-events: fill;
     opacity: 1;
-    left: 300px;
+    left: 270px;
 }
 
 .navBar a {
