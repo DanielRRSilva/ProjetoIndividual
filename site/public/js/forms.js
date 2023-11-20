@@ -18,40 +18,40 @@ function enviarForm() {
     alert(`A idade informada inválida!`)
   } else if (qtdJogoForm.match(/[a-z|A-Z]+/)) {
     alert(`A quantidade de jogos jogados inválida!`)
-  }
-
-  fetch("/formulario/enviarFormulario", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-
-      nomeFormulario: nomeForm,
-      idadeFormulario: Number(idadeForm),
-      generoFormulario: generoForm,
-      jogouFormulario: jogou,
-      qtdJogoFormulario: Number(qtdJogoForm),
-      jogoFavFormulario: jogoFav,
-      cenarioCompetitivoFormulario: cenarioCompetitivo,
-      acompanhaFormulario: acompanha,
-      timeUserFormulario: timeUser,
-      idUsuarioFormulario: idUsuario
-    }),
-  })
-    .then(function (resposta) {
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        setTimeout(() => {
-          alert(`Formulário enviado!`)
-        }, "500")
-      } else {
-        throw "Houve um erro ao enviar o formulario!";
-      }
+  }else {
+    fetch("/formulario/enviarFormulario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+  
+        nomeFormulario: nomeForm,
+        idadeFormulario: Number(idadeForm),
+        generoFormulario: generoForm,
+        jogouFormulario: jogou,
+        qtdJogoFormulario: Number(qtdJogoForm),
+        jogoFavFormulario: jogoFav,
+        cenarioCompetitivoFormulario: cenarioCompetitivo,
+        acompanhaFormulario: acompanha,
+        timeUserFormulario: timeUser,
+        idUsuarioFormulario: idUsuario
+      }),
     })
-    .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-    });
-  return false;
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+  
+        if (resposta.ok) {
+          setTimeout(() => {
+            alert(`Formulário enviado!`)
+          }, "500")
+        } else {
+          throw "Houve um erro ao enviar o formulario!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+    return false;
+  }
 }

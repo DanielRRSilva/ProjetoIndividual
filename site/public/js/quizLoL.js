@@ -122,7 +122,6 @@ function selectedAnswer(e) {
     }
     proximaPergunta()
 }
-
 function proximaPergunta() {
     cardQuiz.removeChild(cardQuiz.firstElementChild)
     for (var filhos = cardAlternativas.childElementCount; filhos > 0; filhos = cardAlternativas.childElementCount) {
@@ -148,7 +147,6 @@ function proximaPergunta() {
         questaoAtual += 1
     }, 300)
 }
-
 function finalizarQuiz() {
     for (var filhos = cardAlternativas.childElementCount; filhos > 0; filhos = cardAlternativas.childElementCount) {
         cardAlternativas.removeChild(cardAlternativas.firstElementChild)
@@ -167,7 +165,6 @@ function finalizarQuiz() {
         `
     )    
 }
-
 function sair() {
     window.location = "../index.html"
 }

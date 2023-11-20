@@ -119,41 +119,40 @@ function cadastrar() {
         return false;
     } else {
         alert(`Td certo`)
-    }
-
-    fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            userServer: userVar,
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        }),
-    })
-        .then(function (resposta) {
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                setTimeout(() => {
-                    bannerLogin.style.marginLeft = "0"
-                    sessionStorage.clear()
-                }, "500")
-            } else {
-                if (resposta.status == 401) {
-                    alert(`O email cadastrado já existe!`)
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
-                }
-            }
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                userServer: userVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            }),
         })
-        .catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    return false;
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+    
+                if (resposta.ok) {
+                    setTimeout(() => {
+                        bannerLogin.style.marginLeft = "0"
+                        sessionStorage.clear()
+                    }, "500")
+                } else {
+                    if (resposta.status == 401) {
+                        alert(`O email cadastrado já existe!`)
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        return false;
+    }
 }
 
 function logar() {
@@ -162,41 +161,40 @@ function logar() {
 
     if (emailVar == "" || senhaVar == "") {
         alert(`Os campos estão em branco!`)
-    }
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
+    }else {
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+    
+            if (resposta.ok) {
+                console.log(resposta);
+    
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    setTimeout(function () {
+                        window.location = "./index.html";
+                    }, 500); // apenas para exibir o loading
+                });
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.ID_USUARIO = json.idUsuario;
-                setTimeout(function () {
-                    window.location = "./index.html";
-                }, 500); // apenas para exibir o loading
-            });
-        } else {
-            console.log("Houve um erro ao tentar realizar o login!");
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
+        return false;
+    }
 }

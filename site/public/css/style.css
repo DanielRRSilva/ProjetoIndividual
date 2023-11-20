@@ -97,7 +97,7 @@ input, select {
 }
 
 .header nav {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,7 +187,7 @@ input, select {
 }
 
 .navBar {
-    width: 40%;
+    width: 45%;
     display: flex;
     justify-content: space-evenly;
     position: relative;
@@ -200,7 +200,7 @@ input, select {
 .active.navBar {
     pointer-events: fill;
     opacity: 1;
-    left: 270px;
+    left: 200px;
 }
 
 .navBar a {
@@ -517,3 +517,16 @@ input, select {
     font-family: 'super-legendBoy', Times, serif;
     font-size: 55px;
 }
+
+.cardQuizEscolha h2 {
+    font-family: 'super-legendBoy', Times, serif;
+    color: #ffdd00;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+.cardQuizEscolha {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 18px;
+    text-align: center;
+}   

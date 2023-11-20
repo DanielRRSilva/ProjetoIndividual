@@ -11,18 +11,14 @@
     justify-content: flex-end;
 }
 
-.text h2 {
-    margin: 0;
-    color: #000;
-    font-size: 30px;
-}
-
 .cardAmarelo {
     width: 85%;
     height: 80%;
     background-color: #ffdd00;
     margin-bottom: 25px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .formulario {
@@ -108,30 +104,20 @@
 
 }
 
-.divArcade {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.text {
+    background-color: #000;
+    height: 85%;
+    width: 40%;
+    border-radius: 32px;
 }
 
-.manchaFundo {
-    width: 420px;
-    height: 420px;
-    background-image: url(../assets/img/fundoMancha.png);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.text h2 {
+    height: fit-content;
+    font-size: 30px;
+    width: 100%;
 }
 
-.manchaFundo img  {
-    width: 230px;
-    transition: 1s;
-}
-
-.manchaFundo img:hover {
-    transform: scale(1.2);
+.text p {
+    width: 100%;
+    text-align: center;
 }
