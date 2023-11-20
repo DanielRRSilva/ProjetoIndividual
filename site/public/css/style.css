@@ -498,3 +498,22 @@ input, select {
     width: 20px;
     height: 20px;
 }
+
+/* Personalização quiz */
+.cardPerguntaResposta h2 {
+    font-family: 'super-legendBoy', Times, serif;
+    color: #ffdd00;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+.cardPerguntaResposta p, .cardPerguntaResposta button {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.exibirAcertos {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 55px;
+}

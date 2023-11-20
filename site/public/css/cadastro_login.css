@@ -75,13 +75,13 @@
     border: none;
     background-color: #ffdd00;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .cardCadastro button:hover, .cardLogin button:hover {
     border: 3px solid #fff;
     color: #fff;
     transform: translateY(-10px);
-    transition: 0.5s;
 }
 
 .entrada {

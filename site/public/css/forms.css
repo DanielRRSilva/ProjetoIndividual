@@ -97,11 +97,11 @@
     border: 3px #000 solid;
     background-color: #fff;
     border-radius: 32px;
+    transition: 0.5s;
 }
 
 .botao button:hover {
     transform: translateY(-10px);
-    transition: 0.5s;
     background-color: #000;
     border-color: #fff;
     color: #fff;
@@ -129,9 +129,9 @@
 
 .manchaFundo img  {
     width: 300px;
+    transition: 1s;
 }
 
 .manchaFundo img:hover {
     transform: scale(1.2);
-    transition: 1s;
 }

@@ -31,25 +31,22 @@ constraint check(cenarioCompetitivo in('sim','nao')),
 constraint check(acompanha in('sim','nao'))
 ) auto_increment = 1000000;
 
-create table pergunta(
-idPergunta int primary key auto_increment,
-pergunta varchar(100),
-resposta varchar(100),
-fkQuiz int,
-constraint foreign key(fkQuiz) references quiz(idQuiz)
-) auto_increment = 1000000000;
-
 create table tentativa(
-idResposta int,
+idTentativa int,
 fkUsuario int,
 fkQuiz int,
-fkPergunta int,
-primary key(idResposta, fkUsuario, fkQuiz),
+primary key(idTentativa, fkUsuario, fkQuiz),
 constraint foreign key (fkUsuario) references usuario(idUsuario),
 constraint foreign key (fkQuiz) references quiz(idQuiz),
 constraint foreign key(fkPergunta) references pergunta(idPergunta),
-numeroTentativa int,
-TorF varchar(5),
-constraint check(TorF in('true', 'false'))
+numeroTentativa int
 );
 
+create table pontuacao(
+idPontuacao int,
+fkQuiz int,
+fkUsuario int,
+fkTentativa int,
+primary key(idPontuacao, fkQuiz, fkUsuario, fkTentativa),
+pontuacao int
+);
