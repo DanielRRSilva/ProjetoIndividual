@@ -226,6 +226,37 @@ input, select {
     width: 50%;
 }
 
+.profileIcon {
+    cursor: pointer;
+}
+
+.subMenu {
+    position: absolute;
+    top: 145%;
+    right: 6%;
+    width: 240px;
+    height: 110px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5;
+}
+
+.subMenu.active {
+    opacity: 1;
+    pointer-events: fill;
+}
+
+.subMenu a {
+    width: 60%;
+}
+
 .iconBox {
     width: fit-content;
     height: auto;
