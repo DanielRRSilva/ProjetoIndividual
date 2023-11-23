@@ -30,6 +30,10 @@
     align-items: center;
 } 
 
+.cardQuizEscolha img {
+    width: 120px;
+}
+
 /* Estilização quiz sobre LoL */
 .bannerQuizLoL {
     width: 100%;
