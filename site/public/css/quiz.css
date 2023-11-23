@@ -30,25 +30,6 @@
     align-items: center;
 } 
 
-.manchaFundo {
-    width: 420px;
-    height: 420px;
-    background-image: url(../assets/img/fundoMancha.png);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.manchaFundo img  {
-    width: 230px;
-    transition: 1s;
-}
-
-.manchaFundo img:hover {
-    transform: scale(1.2);
-}
-
 /* Estilização quiz sobre LoL */
 .bannerQuizLoL {
     width: 100%;
@@ -82,7 +63,7 @@
 }
 
 .cardPerguntaResposta button {
-    width: 50%;
+    width: 53%;
     height: 13%;
     border: none;
     background-color: #ffdd00;
@@ -112,4 +93,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Estilização quiz R6 */
+.bannerQuizR6 {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.fundoQuizR6 {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    z-index: -1;
+    background-image: url(../assets/img/fundoQuizR6.jpg);
+    background-size: cover;
+    opacity: 0.3;   
 }

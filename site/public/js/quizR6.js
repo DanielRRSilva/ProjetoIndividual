@@ -4,93 +4,93 @@ var pontuacao = 0
 var questaoAtual = 1
 var questionsLoL = [
     {
-        question: `Qual o nome da desenvolvedora do LoL?`,
+        question: `Quantos jogadores tem em cada equipe de R6?`,
         answers: [
-            { resposta: `RiotGames`, correct: true },
-            { resposta: `Blizzard`, correct: false },
-            { resposta: `RockStar`, correct: false },
-            { resposta: `Ea Sports`, correct: false }
+            { resposta: `12`, correct: false },
+            { resposta: `5`, correct: true },
+            { resposta: `6`, correct: false },
+            { resposta: `8`, correct: false }
         ]
     },
     {
-        question: `Quantos jogadores tem em uma partida competitiva de LoL?`,
+        question: `Qual o maior evento competitivo do R6?`,
         answers: [
-            { resposta: `5`, correct: false },
-            { resposta: `7`, correct: false },
-            { resposta: `10`, correct: true },
-            { resposta: `3`, correct: false }
+            { resposta: `Invitational`, correct: true },
+            { resposta: `Major`, correct: false },
+            { resposta: `Champions`, correct: false },
+            { resposta: `Worlds`, correct: false }
         ]
     },
     {
-        question: `Qual é o objetivo principal do jogo?`,
+        question: `Qual desses operadores é brasileiro?`,
         answers: [
-            { resposta: `Eliminar monstros`, correct: false },
-            { resposta: `Juntar Gold`, correct: false },
-            { resposta: `Eliminar inimigos`, correct: false },
-            { resposta: `Destruir o Nexus`, correct: true }
+            { resposta: `Azami`, correct: false },
+            { resposta: `Nomad`, correct: false },
+            { resposta: `Maestro`, correct: false },
+            { resposta: `Caveira`, correct: true }
         ]
     },
     {
-        question: `Qual o maior rank dentro do LoL?`,
+        question: `Qual o maior rank dentro do R6?`,
         answers: [
-            { resposta: `Prata`, correct: false },
-            { resposta: `Desafiante`, correct: true },
+            { resposta: `Diamante`, correct: false },
+            { resposta: `Champion`, correct: true },
             { resposta: `Ascendente`, correct: false },
             { resposta: `Esmeralda`, correct: false }
         ]
     },
     {
-        question: `Qual o maior evento competitivo de LoL no mundo?`,
+        question: `Quantos operadores existem no R6 atualmente?`,
         answers: [
-            { resposta: `CBLol`, correct: false },
-            { resposta: `Major`, correct: false },
-            { resposta: `Worlds`, correct: true },
-            { resposta: `LCK`, correct: false }
+            { resposta: `30`, correct: false },
+            { resposta: `60`, correct: true },
+            { resposta: `45`, correct: false },
+            { resposta: `80`, correct: false }
         ]
     },
     {
         question: `Quantos campeonatos mundiais o Brasil já ganhou?`,
         answers: [
-            { resposta: `Nenhum`, correct: true },
-            { resposta: `2`, correct: false },
-            { resposta: `5`, correct: false },
-            { resposta: `Todos`, correct: false }
+            { resposta: `4`, correct: true },
+            { resposta: `3`, correct: false },
+            { resposta: `6`, correct: false },
+            { resposta: `Nenhum`, correct: false }
         ]
     },
     {
-        question: `Quando o LoL foi lançado oficialmente?`,
+        question: `Quando o R6 foi lançado oficialmente?`,
         answers: [
-            { resposta: `18/03/2005`, correct: false },
-            { resposta: `30/02/2007`, correct: false },
-            { resposta: `25/12/2009`, correct: false },
-            { resposta: `27/10/2009`, correct: true }
+            { resposta: `21/07/2013`, correct: false },
+            { resposta: `25/12/2014`, correct: false },
+            { resposta: `15/05/2012`, correct: false },
+            { resposta: `01/12/2015`, correct: true }
         ]
     },
     {
-        question: `Qual frase é dita quando um aliado elimina 5 campeões inimigos?`,
+        question: `Qual o gênero do R6?`,
         answers: [
-            { resposta: `Penta Kill`, correct: true },
-            { resposta: `Unstoppable`, correct: false },
-            { resposta: `Legendary`, correct: false },
-            { resposta: `Monster Kill`, correct: false }
+            { resposta: `Tiro Tático`, correct: true },
+            { resposta: `MOBA`, correct: false },
+            { resposta: `RPG`, correct: false },
+            { resposta: `Corrida`, correct: false }
         ]
     },
     {
-        question: `Qual o nome da série que se passa no mundo de LoL?`,
+        question: `Qual o objetivo do modo de jogo "Bomb"?`,
         answers: [
-            { resposta: `Stranger<br>Things`, correct: false },
-            { resposta: `Teen Wolf`, correct: false },
-            { resposta: `Arcane`, correct: true },
-            { resposta: `Legends of Tomorrow`, correct: false }
+            { resposta: `Eliminar os inimigos`, correct: false },
+            { resposta: `Resgatar o refem`, correct: false },
+            { resposta: `Desarmar a bomba`, correct: true },
+            { resposta: `Encontra os inimigos`, correct: false }
         ]
     },
     {
-        question: `O que significa a sigla URF?`,
+        question: `Oque são os gadgets?`,
         answers: [
-            { resposta: `Ultra Relaxado e Feliz`, correct: false },
-            { resposta: `Ultra Rapido e Furioso`, correct: true },
-            { resposta: `Ultra Raivoso e Forte`, correct: false },
-            { resposta: `Ultra Rico e Filantropo`, correct: false }
+            { resposta: `Equipamentos unicos`, correct: true },
+            { resposta: `Armas e munições`, correct: false },
+            { resposta: `Coletes e capacetes`, correct: false },
+            { resposta: `Drones e cameras`, correct: false }
         ]
     }
 ]

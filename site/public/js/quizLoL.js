@@ -22,7 +22,7 @@ var questionsLoL = [
         ]
     },
     {
-        question: `Qual é o objetivo principal do jogo?`,
+        question: `Qual é o objetivo principal do LoL?`,
         answers: [
             { resposta: `Eliminar monstros`, correct: false },
             { resposta: `Juntar Gold`, correct: false },
