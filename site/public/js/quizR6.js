@@ -13,7 +13,7 @@ var questionsLoL = [
         ]
     },
     {
-        question: `Qual o maior evento competitivo do R6?`,
+        question: `Qual o maior evento<br>competitivo do R6?`,
         answers: [
             { resposta: `Invitational`, correct: true },
             { resposta: `Major`, correct: false },
@@ -40,7 +40,7 @@ var questionsLoL = [
         ]
     },
     {
-        question: `Quantos operadores existem no R6 atualmente?`,
+        question: `Quantos operadores existem<br>no R6 atualmente?`,
         answers: [
             { resposta: `30`, correct: false },
             { resposta: `60`, correct: true },
