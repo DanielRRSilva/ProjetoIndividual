@@ -17,6 +17,21 @@
     justify-content: space-evenly;
 }
 
+.bannerQuizEscolha button {
+    width: 25%;
+    height: 15%;
+    border: none;
+    background-color: #ffdd00;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bannerQuizEscolha button:hover {
+    border: 3px solid #fff;
+    color: #fff;
+    transform: translateY(-10px);
+}
+
 .cardQuizEscolha {
     width: 40%;
     height: 85%;
@@ -74,7 +89,7 @@
 }
 
 .cardPerguntaResposta button {
-    width: 53%;
+    width: 55%;
     height: 13%;
     border: none;
     background-color: #ffdd00;

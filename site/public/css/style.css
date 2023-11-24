@@ -544,6 +544,12 @@ input, select {
     text-align: center;
 }
 
+.bannerQuizEscolha button {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 18px;
+    text-align: center;
+}
+
 .exibirAcertos {
     font-family: 'super-legendBoy', Times, serif;
     font-size: 55px;

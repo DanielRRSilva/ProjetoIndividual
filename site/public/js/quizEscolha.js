@@ -2,6 +2,7 @@
 var iconLoL = document.getElementById("iconLoL")
 var iconR6 = document.getElementById("iconR6")
 var nomeQuiz = ""
+var idUsuario = sessionStorage.ID_USUARIO
 
 document.addEventListener("click",(e)=> {
     if(e.target == iconLoL) {
@@ -19,6 +20,18 @@ document.addEventListener("click",(e)=> {
         iconR6.classList.remove("active")
     }
 })
+
+function irQuiz() {
+    if(idUsuario == undefined) {
+        alert(`É necessario fazer login para jogar!`)
+    }else if(nomeQuiz == "") {
+        alert(`É necessario selecionar um quiz!`)
+    }else if(nomeQuiz == "quizLoL") {
+        window.location = "quiz/quizLoL.html"
+    }else if(nomeQuiz == "quizR6") {
+        window.location = "quiz/quizR6.html"
+    }
+}
 
 function buscarQuiz() {
     fetch("/quizEscolha/selecionarQuiz", {
