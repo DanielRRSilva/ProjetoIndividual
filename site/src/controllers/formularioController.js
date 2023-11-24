@@ -42,7 +42,11 @@ function enviarFormulario(req, res) {
                     console.log(
                         "\nHouve um erro ao realizar o envio do formulario! Erro:", erro.sqlMessage
                     );
-                    res.status(500).json(erro.sqlMessage);
+                    if(erro.sqlMessage == `Duplicate entry '${idUsuario}' for key 'formulario.fkUsuario'`) {
+                        res.status(401).json(erro.sqlMessage);
+                    }else{
+                        res.status(500).json(erro.sqlMessage);
+                    }
                 }
             );
     }

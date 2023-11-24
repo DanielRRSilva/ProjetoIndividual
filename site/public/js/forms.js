@@ -46,7 +46,11 @@ function enviarForm() {
             alert(`Formulário enviado!`)
           }, "500")
         } else {
-          throw "Houve um erro ao enviar o formulario!";
+          if(resposta.status == 401) {
+            alert(`Um usuário não pode enviar mais de um formulário!`)
+          }else {
+            throw "Houve um erro ao enviar o formulario!";
+          }
         }
       })
       .catch(function (resposta) {

@@ -24,3 +24,8 @@ document.onclick = function(e) {
         subMenu.classList.remove("active")
     }
 }
+
+function sair() {
+    sessionStorage.clear()
+    window.location = "../index.html"
+}
