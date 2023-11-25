@@ -1,18 +1,18 @@
 var express = require("express");
 var router = express.Router();
 
-var selecQuizController = require("../controllers/selectQuizController")
+var quizController = require("../controllers/quizController")
 
 router.post("/selecionarQuiz", function(req, res) {
-    selecQuizController.selecionarQuiz(req, res);
+    quizController.selecionarQuiz(req, res);
 })
 
 router.post("/verificarTentativa", function(req, res) {
-    selecQuizController.verificarTentativa(req, res);
+    quizController.verificarTentativa(req, res);
 })
 
 router.post("/inserirTentativa", function(req, res) {
-    selecQuizController.inserirTentativa(req, res);
+    quizController.inserirTentativa(req, res);
 })
 
 module.exports = router

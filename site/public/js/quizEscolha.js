@@ -34,7 +34,7 @@ function irQuiz() {
 }
 
 function buscarQuiz() {
-    fetch("/quizEscolha/selecionarQuiz", {
+    fetch("/quiz/selecionarQuiz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

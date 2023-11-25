@@ -5,8 +5,7 @@ create table usuario(
 idUsuario int primary key auto_increment,
 nome varchar(45),
 email varchar(45),
-senha varchar(45),
-tipoUsuario varchar(20)
+senha varchar(45)
 );
 
 create table quiz(
@@ -47,7 +46,7 @@ numeroTentativa int
 );
 
 create table pontuacao(
-idPontuacao int,
+idPontuacao int auto_increment,
 fkQuiz int,
 fkUsuario int,
 fkTentativa int,

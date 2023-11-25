@@ -169,7 +169,7 @@ function finalizarQuiz() {
             </div>
         `
     )
-    fetch("/quizEscolha/verificarTentativa", {
+    fetch("/quiz/verificarTentativa", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -202,7 +202,7 @@ function finalizarQuiz() {
 }
 function inserirTentativa(nTentativa) {
     var tentativaAtual = Number(nTentativa) + 1
-    fetch("/quizEscolha/inserirTentativa", {
+    fetch("/quiz/inserirTentativa", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

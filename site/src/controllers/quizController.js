@@ -1,4 +1,4 @@
-var selectQuizModel = require("../models/selectQuizModel")
+var quizModel = require("../models/quizModel")
 
 function selecionarQuiz(req, res) {
     var nomeQuiz = req.body.nomeQuiz
@@ -6,7 +6,7 @@ function selecionarQuiz(req, res) {
     if(nomeQuiz == undefined) {
         res.status(400).send("O nome do quiz está undefined!")
     }else {
-        selectQuizModel.selecionarQuiz(nomeQuiz)
+        quizModel.selecionarQuiz(nomeQuiz)
         .then(function(resultadoQuiz){
             console.log(`\nResultados encontrados: ${resultadoQuiz.length}`);
             console.log(`Resultados: ${JSON.stringify(resultadoQuiz)}`);
@@ -38,7 +38,7 @@ function verificarTentativa(req, res) {
     }else if(fkQuiz == undefined) {
         res.status(400).send("O fkQuiz está undefined!")
     }else {
-        selectQuizModel.verificarTentativa(fkUsuario, fkQuiz)
+        quizModel.verificarTentativa(fkUsuario, fkQuiz)
         .then(function(resultadoVerificar) {
             console.log(`\nResultados encontrados: ${resultadoVerificar.length}`);
             console.log(`Resultados: ${JSON.stringify(resultadoVerificar)}`);
@@ -69,7 +69,7 @@ function inserirTentativa(req, res) {
     }else if(tentativaAtual == undefined) {
         res.status(400).send("A tentativa está undefined!")
     }else {
-        selectQuizModel.inserirTentativa(fkUsuario, fkQuiz, tentativaAtual)
+        quizModel.inserirTentativa(fkUsuario, fkQuiz, tentativaAtual)
         .then(
             function (resultadoInserir) {
                 res.json(resultadoInserir);
