@@ -9,15 +9,17 @@ function enviarForm() {
   var acompanha = acompanhaCenario.value
   var timeUser = timeTorceUser.value
   var idUsuario = sessionStorage.ID_USUARIO
-
-  if (nomeForm == "" || idadeForm == "" || generoForm == "" || jogou == "" || qtdJogoForm == "" || jogoFav == "" || cenarioCompetitivo == "" || acompanha == "" || timeUser == "") {
+  
+  if(idUsuario == undefined) {
+    alert(`É necessario fazer login`)
+  }else if (nomeForm == "" || idadeForm == "" || generoForm == "" || jogou == "" || qtdJogoForm == "" || jogoFav == "" || cenarioCompetitivo == "" || acompanha == "" || timeUser == "") {
     alert(`Os campos devem ser todos preenchidos!`)
   } else if (nomeForm.length <= 2) {
     alert(`Nome inválido`)
   } else if (idadeForm.match(/[a-z|A-Z]+/)) {
     alert(`A idade informada inválida!`)
   } else if (qtdJogoForm.match(/[a-z|A-Z]+/)) {
-    alert(`A quantidade de jogos jogados inválida!`)
+    alert(`A quantidade de jogos jogados inválida!`) 
   }else {
     fetch("/formulario/enviarFormulario", {
       method: "POST",

@@ -14,6 +14,10 @@ idQuiz int primary key auto_increment,
 nome varchar(45)
 ) auto_increment = 1000;
 
+insert into quiz values
+(null, 'quizLoL'),
+(null, 'quizR6');
+
 create table formulario(
 idFormulario int primary key auto_increment,
 nome varchar(45),
@@ -33,13 +37,12 @@ constraint check(acompanha in('sim','nao'))
 ) auto_increment = 1000000;
 
 create table tentativa(
-idTentativa int,
+idTentativa int auto_increment,
 fkUsuario int,
 fkQuiz int,
 primary key(idTentativa, fkUsuario, fkQuiz),
 constraint foreign key (fkUsuario) references usuario(idUsuario),
 constraint foreign key (fkQuiz) references quiz(idQuiz),
-constraint foreign key(fkPergunta) references pergunta(idPergunta),
 numeroTentativa int
 );
 

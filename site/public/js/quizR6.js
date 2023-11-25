@@ -1,5 +1,7 @@
 var cardQuiz = document.getElementById("cardQuiz")
 var cardAlternativas = document.getElementById("cardAlternativas")
+var fkUsuario = sessionStorage.ID_USUARIO
+    var fkQuiz = sessionStorage.ID_QUIZ
 var pontuacao = 0
 var questaoAtual = 1
 var questionsLoL = [
@@ -161,10 +163,72 @@ function finalizarQuiz() {
             <div class="exibirAcertos">
                 ${pontuacao}
             </div>
-            <button onclick="sair()">Voltar para Home</button>
+            <div class="botoesFinal">
+                <button onclick="voltarQuiz()">Jogar de Novo</button>
+                <button onclick="sair()">Voltar para Home</button>
+            </div>
         `
-    )    
+    )
+    fetch("/quizEscolha/verificarTentativa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkUsuario: fkUsuario,
+            fkQuiz: fkQuiz
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+          if (resposta.ok) {
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.TENTATIVA = json.tentativa
+            });
+            setTimeout(()=> {
+                var nTentativa = sessionStorage.TENTATIVA
+                inserirTentativa(nTentativa)
+            },1000)
+          } else {
+            throw "Houve um erro ao verificar a tentativa";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+      return false;    
+}
+function inserirTentativa(nTentativa) {
+    var tentativaAtual = Number(nTentativa) + 1
+    fetch("/quizEscolha/inserirTentativa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkUsuario: fkUsuario,
+            fkQuiz: fkQuiz,
+            tentativaAtual: tentativaAtual
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+          if (resposta.ok) {
+            
+          } else {
+            throw "Houve um erro ao inserir a tentativa";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+      return false;
 }
 function sair() {
     window.location = "../index.html"
+}
+function voltarQuiz() {
+    window.location = "../quizEscolha.html"
 }
