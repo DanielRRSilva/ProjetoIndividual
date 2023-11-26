@@ -15,4 +15,12 @@ router.post("/inserirTentativa", function(req, res) {
     quizController.inserirTentativa(req, res);
 })
 
+router.post("/selecionarTentativa", function(req, res) {
+    quizController.selecionarTentativa(req, res)
+})
+
+router.post("/inserirPontuacao", function(req, res) {
+    quizController.inserirPontuacao(req, res)
+})
+
 module.exports = router

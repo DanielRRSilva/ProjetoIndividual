@@ -29,6 +29,7 @@ function selecionarQuiz(req, res) {
     }
 }
 
+
 function verificarTentativa(req, res) {
     var fkUsuario = req.body.fkUsuario
     var fkQuiz = req.body.fkQuiz
@@ -45,11 +46,13 @@ function verificarTentativa(req, res) {
             if(resultadoVerificar.length == 0) {
                 console.log(resultadoVerificar)
                 res.json({
+                    idTentativa: 1,
                     tentativa: 0
                 })
             }else {
                 console.log(resultadoVerificar)
                 res.json({
+                    idTentativa: resultadoVerificar[0].idTentativa,
                     tentativa: resultadoVerificar[0].numeroTentativa
                 })
             }
@@ -88,8 +91,74 @@ function inserirTentativa(req, res) {
     }
 }
 
+function selecionarTentativa(req, res) {
+    var fkUsuario = req.body.fkUsuario
+    var fkQuiz = req.body.fkQuiz
+
+    if(fkUsuario == undefined) {
+        res.status(400).send("O fkUsuario está undefined!")
+    }else if(fkQuiz == undefined) {
+        res.status(400).send("O fkQuiz está undefined!")
+    }else {
+        quizModel.selecionarTentativa(fkUsuario, fkQuiz)
+        .then(
+            function(resultadoSelecionar) {
+                console.log(resultadoSelecionar)
+                res.json({
+                    fkTentativa: resultadoSelecionar[0].idTentativa
+                })
+            }
+        ).catch(
+            function(erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao selecionar a tentativa! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+    }
+}
+
+function inserirPontuacao(req, res) {
+    var fkUsuario = req.body.fkUsuario
+    var fkQuiz = req.body.fkQuiz
+    var fkTentativa = req.body.fkTentativa
+    var pontuacao = req.body.pontuacao
+
+    if(fkUsuario == undefined) {
+        res.status(400).send("O fkUsuario está undefined!")
+    }else if(fkQuiz == undefined) {
+        res.status(400).send("O fkQuiz está undefined!")
+    }else if(fkTentativa == undefined) {
+        res.status(400).send("O fkTentativa está undefined!")
+    }else if(pontuacao == undefined){
+        res.status(400).send("A pontuação está undefined!")
+    }else {
+        quizModel.inserirPontuacao(fkTentativa, fkUsuario, fkQuiz, pontuacao)
+        .then(
+            function(resultadoInserirPontuacao) {
+                console.log(resultadoInserirPontuacao)
+                res.json(resultadoInserirPontuacao)
+            }
+        ).catch(
+            function(erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao inserir a pontuação! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+    }
+}
+
 module.exports = {
     selecionarQuiz,
     verificarTentativa,
-    inserirTentativa
+    inserirTentativa,
+    selecionarTentativa,
+    inserirPontuacao
 }

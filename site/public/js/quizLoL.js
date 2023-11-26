@@ -185,6 +185,7 @@ function finalizarQuiz() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
+                sessionStorage.ID_TENTATIVA = json.idTentativa
                 sessionStorage.TENTATIVA = json.tentativa
             });
             setTimeout(()=> {
@@ -216,9 +217,66 @@ function inserirTentativa(nTentativa) {
         .then(function (resposta) {
           console.log("resposta: ", resposta);
           if (resposta.ok) {
-            
+            selecionarTentativa()
           } else {
             throw "Houve um erro ao inserir a tentativa";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+      return false;
+}
+function selecionarTentativa() {
+    fetch("/quiz/selecionarTentativa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkUsuario: fkUsuario,
+            fkQuiz: fkQuiz
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+          if (resposta.ok) {
+            resposta.json().then(json => {
+                console.log(resposta)
+                sessionStorage.ID_TENTATIVA = json.fkTentativa
+            })
+            setTimeout(()=> {
+                var fkTentativa = sessionStorage.ID_TENTATIVA
+                guardarPontuacao(fkTentativa)
+            }, 1000);
+          } else {
+            throw "Houve um erro ao selecionar a tentativa!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+      return false;
+}
+function guardarPontuacao(fkTentativa) {
+    fetch("/quiz/inserirPontuacao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkUsuario: fkUsuario,
+            fkQuiz: fkQuiz,
+            fkTentativa: fkTentativa,
+            pontuacao: pontuacao
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+          if (resposta.ok) {
+            
+          } else {
+            throw "Houve um erro ao inserir a pontuação";
           }
         })
         .catch(function (resposta) {
