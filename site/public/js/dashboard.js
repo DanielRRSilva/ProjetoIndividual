@@ -2,6 +2,8 @@ var spanIdadeMedia = document.getElementById("idadeMedia")
 var spanQtdJogoMedia = document.getElementById("qtdJogoMedia")
 var spanUsuariosMasculinos = document.getElementById("usuariosMasculinos")
 var spanUsuariasFemininas = document.getElementById("usuariasFemininas")
+var label = []
+var data = []
 
 function buscarDados() {
     fetch("/dashboard/buscarDados", {
@@ -32,4 +34,62 @@ function buscarDados() {
     })
     return false;
 }
+
+function buscarTimes() {
+    fetch("/dashboard/buscarTimes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            console.log(resposta);
+            resposta.json().then(json => {
+                for(i = 0; i < resposta.length; i++) {
+                    label.push(resposta[i].qualOrgTorce)
+                    data.push(resposta[i].qtdTorcedores)
+                }
+                setTimeout(()=> {
+                    plotarGrafico()
+                },10)
+            })
+        } else {
+            console.log("Houve um erro ao tentar realizar coletar os dados!");
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    return false;
+}
+
+function plotarGrafico() {
+    const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: label,
+      datasets: [{
+        label: '# of Votes',
+        data: data,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+}
 buscarDados()
+buscarTimes()

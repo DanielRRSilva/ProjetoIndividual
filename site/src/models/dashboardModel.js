@@ -28,9 +28,17 @@ function buscarUsuariosFemininos() {
     return database.executar(instrucao);
 }
 
+function buscarTresTimesFav() {
+    var instrucao = `select qualOrgTorce, count(qualOrgTorce) as qtdTorcedores from formulario group by qualOrgTorce order by qtdTorcedores desc limit 3`
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     buscarIdadeMedia,
     buscarMediaJogos, 
     buscarUsuariosMasculinos,
-    buscarUsuariosFemininos
+    buscarUsuariosFemininos,
+    buscarTresTimesFav
 }

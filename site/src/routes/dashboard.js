@@ -7,4 +7,8 @@ router.post("/buscarDados", function(req, res) {
     dashboardController.buscarDados(req, res)
 })
 
+router.post("/buscarTimes", function(req, res) {
+    dashboardController.buscarTresTimesFav(req, res)
+})
+
 module.exports = router

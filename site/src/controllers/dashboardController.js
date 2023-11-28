@@ -45,6 +45,13 @@ function buscarDados(req, res) {
     );
 }
 
+function buscarTresTimesFav(req, res) {
+    dashboardModel.buscarTresTimesFav().then(respostaTimes=> {
+        res.json(respostaTimes)
+    })
+}
+
 module.exports = {
-    buscarDados
+    buscarDados,
+    buscarTresTimesFav
 }
