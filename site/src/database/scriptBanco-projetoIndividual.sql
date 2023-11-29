@@ -53,3 +53,7 @@ fkTentativa int,
 primary key(idPontuacao, fkQuiz, fkUsuario, fkTentativa),
 pontuacao int
 );
+
+CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'usuario';
+GRANT insert, select, update, delete on projetoIndividual.* TO 'usuario'@'localhost';
+FLUSH PRIVILEGES;

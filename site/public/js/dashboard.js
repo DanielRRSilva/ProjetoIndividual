@@ -44,13 +44,13 @@ function buscarTimes() {
         body: JSON.stringify({
             
         })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            console.log(resposta);
-            resposta.json().then(json => {
-                for(i = 0; i < resposta.length; i++) {
-                    label.push(resposta[i].qualOrgTorce)
-                    data.push(resposta[i].qtdTorcedores)
+    }).then(function (res) {
+        if (res.ok) {
+            res.json().then(json => {
+                console.log(json);
+                for(i = 0; i < json.length; i++) {
+                    label.push(json[i].qualOrgTorce)
+                    data.push(json[i].qtdTorcedores)
                 }
                 setTimeout(()=> {
                     plotarGrafico()
@@ -67,6 +67,9 @@ function buscarTimes() {
     })
     return false;
 }
+
+buscarDados()
+buscarTimes()
 
 function plotarGrafico() {
     const ctx = document.getElementById('myChart');
@@ -91,5 +94,3 @@ function plotarGrafico() {
   });
 
 }
-buscarDados()
-buscarTimes()
