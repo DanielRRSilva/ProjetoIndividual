@@ -1,7 +1,8 @@
 var database = require("../database/config")
 
 function buscarIdadeMedia() {
-    var instrucao = `select avg(idade) as idadeMedia from formulario`
+    var instrucao = `select avg(year(curdate()) - year(dtNasc) - (date_format(curdate(), '%m%d') < date_format(dtNasc, '%m%d'))) as idadeMedia
+    from formulario;`
 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

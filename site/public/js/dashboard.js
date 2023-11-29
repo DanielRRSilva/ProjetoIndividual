@@ -81,13 +81,17 @@ function plotarGrafico() {
       datasets: [{
         label: '# of Votes',
         data: data,
+        backgroundColor: "#ffdd00",
         borderWidth: 1
       }]
     },
     options: {
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
         }
       }
     }

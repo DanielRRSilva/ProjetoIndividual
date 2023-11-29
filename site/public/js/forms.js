@@ -1,5 +1,4 @@
 function enviarForm() {
-  var nomeForm = nomeUser.value
   var idadeForm = idadeUser.value
   var generoForm = generoUser.value
   var jogou = jogouUser.value
@@ -12,10 +11,8 @@ function enviarForm() {
   
   if(idUsuario == undefined) {
     alert(`É necessario fazer login`)
-  }else if (nomeForm == "" || idadeForm == "" || generoForm == "" || jogou == "" || qtdJogoForm == "" || jogoFav == "" || cenarioCompetitivo == "" || acompanha == "" || timeUser == "") {
+  }else if (idadeForm == "" || generoForm == "" || jogou == "" || qtdJogoForm == "" || jogoFav == "" || cenarioCompetitivo == "" || acompanha == "" || timeUser == "") {
     alert(`Os campos devem ser todos preenchidos!`)
-  } else if (nomeForm.length <= 2) {
-    alert(`Nome inválido`)
   } else if (idadeForm.match(/[a-z|A-Z]+/)) {
     alert(`A idade informada inválida!`)
   } else if (qtdJogoForm.match(/[a-z|A-Z]+/)) {
@@ -28,8 +25,7 @@ function enviarForm() {
       },
       body: JSON.stringify({
   
-        nomeFormulario: nomeForm,
-        idadeFormulario: Number(idadeForm),
+        idadeFormulario: idadeForm,
         generoFormulario: generoForm,
         jogouFormulario: jogou,
         qtdJogoFormulario: Number(qtdJogoForm),

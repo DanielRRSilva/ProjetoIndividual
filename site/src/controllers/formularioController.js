@@ -1,7 +1,6 @@
 var formularioModel = require("../models/formularioModel")
 
 function enviarFormulario(req, res) {
-    var nome = req.body.nomeFormulario;
     var idade = req.body.idadeFormulario;
     var genero = req.body.generoFormulario;
     var jogou = req.body.jogouFormulario;
@@ -12,9 +11,7 @@ function enviarFormulario(req, res) {
     var time = req.body.timeUserFormulario;
     var idUsuario = req.body.idUsuarioFormulario;
 
-    if(nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    }else if(idade == undefined) {
+   if(idade == undefined) {
         res.status(400).send("Sua idade está undefined!");
     }else if( genero == undefined) {
         res.status(400).send("Seu genero está undefined!");
@@ -31,7 +28,7 @@ function enviarFormulario(req, res) {
     }else if(time == undefined) {
         res.status(400).send("O time para que torce está undefined!");
     }else {
-        formularioModel.enviarFormulario(nome, idade, genero, jogou, qtdJogo, jogoFav, competitivo, acompanha, time, idUsuario)
+        formularioModel.enviarFormulario(idade, genero, jogou, qtdJogo, jogoFav, competitivo, acompanha, time, idUsuario)
             .then(
                 function(resultado) {
                     res.json(resultado)

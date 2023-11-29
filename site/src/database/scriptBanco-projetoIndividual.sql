@@ -20,7 +20,7 @@ insert into quiz values
 create table formulario(
 idFormulario int primary key auto_increment,
 nome varchar(45),
-idade int,
+dtNasc date,
 genero varchar(20),
 jogou char(3),
 qtdJogou int,
