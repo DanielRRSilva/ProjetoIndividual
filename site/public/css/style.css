@@ -50,6 +50,26 @@ input, select {
     font-family: 'Open Sans', sans-serif;
 }
 
+.alerta {
+    width: 320px;
+    height: 100px;
+    background-color: #ffdd00;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 12%;
+    right: 2%;
+    z-index: 3;
+    border: 3px solid #fff;
+}
+
+#mensagem {
+    font-family: 'super-legendBoy', Times, serif;
+    font-size: 18px;
+    text-align: center;
+}
+
 .bannerForms label {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;

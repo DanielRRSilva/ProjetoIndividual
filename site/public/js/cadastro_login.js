@@ -13,75 +13,77 @@ var setaUserNameCadastro = document.getElementById("setaUserNameCadastro")
 var setaEmailCadastro = document.getElementById("setaEmailCadastro")
 var setaSenhaCadastro = document.getElementById("setaSenhaCadastro")
 var setaConfirmaSenhaCadastro = document.getElementById("setaConfirmaSenhaCadastro")
+var alerta = document.getElementById("alerta")
+var mensagem = document.getElementById("mensagem")
 
 function irBannerCadastro() {
     bannerLogin.style.marginLeft = "-50%"
 }
 
-inputEmailLogin.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "1"
-    setaSenhaLogin.style.opacity = "0"
-    setaUserNameCadastro.style.opacity = "0"
-    setaEmailCadastro.style.opacity = "0"
-    setaSenhaCadastro.style.opacity = "0"
-    setaConfirmaSenhaCadastro.style.opacity = "0"
-})
+// inputEmailLogin.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "1"
+//     setaSenhaLogin.style.opacity = "0"
+//     setaUserNameCadastro.style.opacity = "0"
+//     setaEmailCadastro.style.opacity = "0"
+//     setaSenhaCadastro.style.opacity = "0"
+//     setaConfirmaSenhaCadastro.style.opacity = "0"
+// })
 
-inputSenhaLogin.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "0"
-    setaSenhaLogin.style.opacity = "1"
-    setaUserNameCadastro.style.opacity = "0"
-    setaEmailCadastro.style.opacity = "0"
-    setaSenhaCadastro.style.opacity = "0"
-    setaConfirmaSenhaCadastro.style.opacity = "0"
-})
+// inputSenhaLogin.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "0"
+//     setaSenhaLogin.style.opacity = "1"
+//     setaUserNameCadastro.style.opacity = "0"
+//     setaEmailCadastro.style.opacity = "0"
+//     setaSenhaCadastro.style.opacity = "0"
+//     setaConfirmaSenhaCadastro.style.opacity = "0"
+// })
 
-inputUserNameCadastro.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "0"
-    setaSenhaLogin.style.opacity = "0"
-    setaUserNameCadastro.style.opacity = "1"
-    setaEmailCadastro.style.opacity = "0"
-    setaSenhaCadastro.style.opacity = "0"
-    setaConfirmaSenhaCadastro.style.opacity = "0"
-})
+// inputUserNameCadastro.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "0"
+//     setaSenhaLogin.style.opacity = "0"
+//     setaUserNameCadastro.style.opacity = "1"
+//     setaEmailCadastro.style.opacity = "0"
+//     setaSenhaCadastro.style.opacity = "0"
+//     setaConfirmaSenhaCadastro.style.opacity = "0"
+// })
 
-inputEmailUserCadastro.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "0"
-    setaSenhaLogin.style.opacity = "0"
-    setaUserNameCadastro.style.opacity = "0"
-    setaEmailCadastro.style.opacity = "1"
-    setaSenhaCadastro.style.opacity = "0"
-    setaConfirmaSenhaCadastro.style.opacity = "0"
-})
+// inputEmailUserCadastro.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "0"
+//     setaSenhaLogin.style.opacity = "0"
+//     setaUserNameCadastro.style.opacity = "0"
+//     setaEmailCadastro.style.opacity = "1"
+//     setaSenhaCadastro.style.opacity = "0"
+//     setaConfirmaSenhaCadastro.style.opacity = "0"
+// })
 
-inputSenhaUserCadastro.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "0"
-    setaSenhaLogin.style.opacity = "0"
-    setaUserNameCadastro.style.opacity = "0"
-    setaEmailCadastro.style.opacity = "0"
-    setaSenhaCadastro.style.opacity = "1"
-    setaConfirmaSenhaCadastro.style.opacity = "0"
-})
+// inputSenhaUserCadastro.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "0"
+//     setaSenhaLogin.style.opacity = "0"
+//     setaUserNameCadastro.style.opacity = "0"
+//     setaEmailCadastro.style.opacity = "0"
+//     setaSenhaCadastro.style.opacity = "1"
+//     setaConfirmaSenhaCadastro.style.opacity = "0"
+// })
 
-inputConfirmarSenhaUserCadastro.addEventListener("focus", () => {
-    setaEmailLogin.style.opacity = "0"
-    setaSenhaLogin.style.opacity = "0"
-    setaUserNameCadastro.style.opacity = "0"
-    setaEmailCadastro.style.opacity = "0"
-    setaSenhaCadastro.style.opacity = "0"
-    setaConfirmaSenhaCadastro.style.opacity = "1"
-})
+// inputConfirmarSenhaUserCadastro.addEventListener("focus", () => {
+//     setaEmailLogin.style.opacity = "0"
+//     setaSenhaLogin.style.opacity = "0"
+//     setaUserNameCadastro.style.opacity = "0"
+//     setaEmailCadastro.style.opacity = "0"
+//     setaSenhaCadastro.style.opacity = "0"
+//     setaConfirmaSenhaCadastro.style.opacity = "1"
+// })
 
-document.addEventListener("click", (e) => {
-    if (!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target) && !inputConfirmarSenhaUserCadastro.contains(e.target) && !inputSenhaUserCadastro.contains(e.target) && !inputEmailUserCadastro.contains(e.target) && !inputUserNameCadastro.contains(e.target)) {
-        setaEmailLogin.style.opacity = "0"
-        setaSenhaLogin.style.opacity = "0"
-        setaUserNameCadastro.style.opacity = "0"
-        setaEmailCadastro.style.opacity = "0"
-        setaSenhaCadastro.style.opacity = "0"
-        setaConfirmaSenhaCadastro.style.opacity = "0"
-    }
-})
+// document.addEventListener("click", (e) => {
+//     if (!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target) && !inputConfirmarSenhaUserCadastro.contains(e.target) && !inputSenhaUserCadastro.contains(e.target) && !inputEmailUserCadastro.contains(e.target) && !inputUserNameCadastro.contains(e.target)) {
+//         setaEmailLogin.style.opacity = "0"
+//         setaSenhaLogin.style.opacity = "0"
+//         setaUserNameCadastro.style.opacity = "0"
+//         setaEmailCadastro.style.opacity = "0"
+//         setaSenhaCadastro.style.opacity = "0"
+//         setaConfirmaSenhaCadastro.style.opacity = "0"
+//     }
+// })
 
 function cadastrar() {
 
@@ -91,34 +93,35 @@ function cadastrar() {
     var confirmarSenha = confirmarSenhaUser.value
 
     if (userVar == "" && emailVar == "" && senhaVar == "" && confirmarSenha == "") {
-        alert(`Nenhum campo preenchido!!!`)
-        return false
+        mensagem.innerHTML =`Nenhum campo preenchido!!!`
+        alerta.style.display = "flex"
     } else if (userVar == "") {
-        alert(`O campo do User Name é obrigatório!`)
-        return false;
+        mensagem.innerHTML =`O campo do User Name é obrigatório!`
+        alerta.style.display = "flex"
     } else if (userVar.match(/[0-9]/ig) || userVar.length < 3) {
-        alert(`Caracteres Inválidos no User Name!`)
-        return false;
+        mensagem.innerHTML = `Caracteres Inválidos no User Name!`
+        alerta.style.display = "flex"
     } else if (emailVar == "") {
-        alert(`O campo do E-mail é obrigatório!`)
-        return false;
+        mensagem.innerHTML = `O campo do E-mail é obrigatório!`
+        alerta.style.display = "flex"
     } else if (emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0) {
-        alert(`E-mail inválido!!`)
-        return false;
+        mensagem.innerHTML = `E-mail inválido!!`
+        alerta.style.display = "flex"
     } else if (senhaVar == "") {
-        alert(`O campo senha é obrigatório!`)
-        return false;
+        mensagem.innerHTML = `O campo senha é obrigatório!`
+        alerta.style.display = "flex"
     } else if (senhaVar.length < 8) {
-        alert(`A senha precisa ter 8 ou mais caracteres!`)
-        return false;
+        mensagem.innerHTML = `A senha precisa ter 8 ou mais caracteres!`
+        alerta.style.display = "flex"
     } else if (confirmarSenha == "") {
-        alert(`O campo confirmar senha é obrigatório!`)
-        return false;
+        mensagem.innerHTML = `O campo confirmar senha é obrigatório!`
+        alerta.style.display = "flex"
     } else if (confirmarSenha != senhaVar) {
-        alert(`A confirmação da senha não está igual!`)
-        return false;
+        mensagem.innerHTML = `A confirmação da senha não está igual!`
+        alerta.style.display = "flex"
     } else {
-        alert(`Td certo`)
+        mensagem.innerHTML = `O cadastro foi efetuado!`
+        alerta.style.display = "flex"
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -151,16 +154,20 @@ function cadastrar() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-        return false;
+            return false;
+        }
+        setTimeout(()=> {
+            alerta.style.display = "none"
+        },3000)
     }
-}
 
 function logar() {
     var emailVar = emailLoginUser.value
     var senhaVar = senhaLoginUser.value
 
     if (emailVar == "" || senhaVar == "") {
-        alert(`Os campos estão em branco!`)
+        mensagem.innerHTML = `Os campos estão vazios!`
+        alerta.style.display = "flex"
     }else {
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -197,4 +204,7 @@ function logar() {
         })
         return false;
     }
+    setTimeout(()=> {
+        alerta.style.display = "none"
+    },3000)
 }

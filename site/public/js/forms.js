@@ -1,3 +1,6 @@
+var alerta = document.getElementById("alerta")
+var mensagem = document.getElementById("mensagem")
+
 function enviarForm() {
   var idadeForm = idadeUser.value
   var generoForm = generoUser.value
@@ -10,13 +13,17 @@ function enviarForm() {
   var idUsuario = sessionStorage.ID_USUARIO
   
   if(idUsuario == undefined) {
-    alert(`É necessario fazer login`)
+    mensagem.innerHTML = `É necessário fazer login`
+    alerta.style.display = "flex"
   }else if (idadeForm == "" || generoForm == "" || jogou == "" || qtdJogoForm == "" || jogoFav == "" || cenarioCompetitivo == "" || acompanha == "" || timeUser == "") {
-    alert(`Os campos devem ser todos preenchidos!`)
+    mensagem.innerHTML = `Os campos devem ser todos preenchidos!`
+    alerta.style.display = "flex"
   } else if (idadeForm.match(/[a-z|A-Z]+/)) {
-    alert(`A idade informada inválida!`)
+    mensagem.innerHTML = `A idade informada inválida!`
+    alerta.style.display = "flex"
   } else if (qtdJogoForm.match(/[a-z|A-Z]+/)) {
-    alert(`A quantidade de jogos jogados inválida!`) 
+    mensagem.innerHTML = `A quantidade de jogos jogados é inválida!`
+    alerta.style.display = "flex" 
   }else {
     fetch("/formulario/enviarFormulario", {
       method: "POST",
@@ -41,11 +48,13 @@ function enviarForm() {
   
         if (resposta.ok) {
           setTimeout(() => {
-            alert(`Formulário enviado!`)
+            mensagem.innerHTML = `Formulário enviado!`
+            alerta.style.display = "flex"
           }, "500")
         } else {
           if(resposta.status == 401) {
-            alert(`Um usuário não pode enviar mais de um formulário!`)
+            mensagem.innerHTML = `Um usuário não pode enviar mais de um formulário!`
+            alerta.style.display = "flex"
           }else {
             throw "Houve um erro ao enviar o formulario!";
           }
@@ -56,4 +65,7 @@ function enviarForm() {
       });
     return false;
   }
+  setTimeout(()=> {
+    alerta.style.display = "none"
+  },3000)
 }

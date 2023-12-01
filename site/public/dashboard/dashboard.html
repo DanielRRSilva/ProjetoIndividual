@@ -10,6 +10,9 @@
     <title>The Control|Dashboard</title>
 </head>
 <body>
+    <div class="alerta" id="alerta">
+        <p id="mensagem"></p>
+    </div>
     <div class="header" id="header">
         <div class="logo_title">
             <img src="../assets/img/logo.png" alt="Logo">
@@ -26,11 +29,11 @@
                     <li><a href="../games.html">Games</a></li>
                     <li><a href="../quizEscolha.html">Quiz</a></li>
                     <li><a href="../forms.html">Forms</a></li>
-                    <li><a href="../cadastro_login.html">Login</a></li>
                     <li><img src="../assets/img/do-utilizador.png" alt="user-icon" class="profileIcon"></li>
                 </ul>
                 <div class="subMenu">
-                    <a href="#">DashBoard</a>
+                    <a id="loginButton" href="cadastro_login.html">Login/Cadastro</a>
+                    <a id="dashButton" href="#">DashBoard</a>
                     <a href="#" onclick="sair()">Sair</a>
                 </div>
             </nav>

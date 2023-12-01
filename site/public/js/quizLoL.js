@@ -161,7 +161,7 @@ function finalizarQuiz() {
             <h2>Parabéns</h2>
             <p>Você concluiu o quiz!<br>Seu total de acertos foi:</p>
             <div class="exibirAcertos">
-                ${pontuacao}
+                ${pontuacao}/10
             </div>
             <div class="botoesFinal">
                 <button onclick="voltarQuiz()">Jogar de Novo</button>

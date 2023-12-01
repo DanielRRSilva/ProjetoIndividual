@@ -3,6 +3,8 @@ var iconLoL = document.getElementById("iconLoL")
 var iconR6 = document.getElementById("iconR6")
 var nomeQuiz = ""
 var idUsuario = sessionStorage.ID_USUARIO
+var alerta = document.getElementById("alerta")
+var mensagem = document.getElementById("mensagem")
 
 document.addEventListener("click",(e)=> {
     if(e.target == iconLoL) {
@@ -23,14 +25,19 @@ document.addEventListener("click",(e)=> {
 
 function irQuiz() {
     if(idUsuario == undefined) {
-        alert(`É necessario fazer login para jogar!`)
+        mensagem.innerHTML = `É necessario fazer login para jogar!`
+        alerta.style.display = "flex"
     }else if(nomeQuiz == "") {
-        alert(`É necessario selecionar um quiz!`)
+        mensagem.innerHTML =`É necessario selecionar um quiz!`
+        alerta.style.display = "flex"
     }else if(nomeQuiz == "quizLoL") {
         window.location = "quiz/quizLoL.html"
     }else if(nomeQuiz == "quizR6") {
         window.location = "quiz/quizR6.html"
     }
+    setTimeout(()=> {
+        alerta.style.display = "none"
+      },3000)
 }
 
 function buscarQuiz() {

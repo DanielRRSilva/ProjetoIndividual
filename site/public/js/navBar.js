@@ -3,6 +3,10 @@ var navBar = document.querySelector(".navBar")
 var profileIcon = document.querySelector(".profileIcon")
 var subMenu = document.querySelector(".subMenu")
 var idUser = sessionStorage.ID_USUARIO
+var alerta = document.getElementById("alerta")
+var mensagem = document.getElementById("mensagem")
+var loginBtn = document.getElementById("loginButton")
+var dashBtn = document.getElementById("dashButton")
 
 iconBox.onclick = function() {
     iconBox.classList.toggle("active")
@@ -10,10 +14,12 @@ iconBox.onclick = function() {
 }
 
 profileIcon.onclick = function() {
-    if(idUser != undefined) {
-        subMenu.classList.toggle("active")
+    subMenu.classList.toggle("active")
+    if(idUser == undefined) {
+        dashBtn.style.display = "none"
     }else {
-        alert(`Faça Login`)
+        loginBtn.style.display = "none"
+        dashBtn.style.display = "block"
     }
 }
 
