@@ -13,6 +13,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var formularioRouter = require("./src/routes/formulario");
 var quizRouter = require("./src/routes/quiz");
 var dashboardRouter = require("./src/routes/dashboard");
+var perfilRouter = require("./src/routes/perfil");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,6 +26,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/formulario", formularioRouter);
 app.use("/quiz", quizRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/perfil", perfilRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

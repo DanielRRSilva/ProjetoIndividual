@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <title>The Control| Perfil</title>
 </head>
 <body>
     <div class="alerta">
         <p id="mensagem">Cadastro realizado!</p>
     </div>
+    <div class="sideMenu">
+        <h1>Bem Vindo</h1><br><br>
+        <h2 id="nomeUser">Teste</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a id="dashButton" href="dashboard/dashboard.html">DashBoard</a></li>
+                <li><img src="assets/img/do-utilizador.png" alt="user-icon" class="profileIcon"></li>
+                <li><a href="index.html" onclick="logout()">Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="bannerPerfil">
+        <div class="cardsTop">
+            <div class="card">
+                <h2>Quantidade de quizzes feitos:</h2>
+                <p id="qtdTentativa"></p>
+            </div>
+            <div class="card">
+                <h2>Maior número de acertos:</h2>
+                <p id="qtdAcerto"></p>
+            </div>
+        </div>
+        <div class="cardsBot">
+            <div class="card">
+                <h2>Org para qual torce:</h2>
+                <p id="orgTorce"></p>
+            </div>
+            <div class="card">
+                <h2>Jogo favorito:</h2>
+                <p id="jogoFav"></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+<script src="js/perfil.js"></script>
+<script src="js/navBar.js"></script>

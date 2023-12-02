@@ -7,6 +7,7 @@ var alerta = document.getElementById("alerta")
 var mensagem = document.getElementById("mensagem")
 var loginBtn = document.getElementById("loginButton")
 var dashBtn = document.getElementById("dashButton")
+var perfilBtn = document.getElementById("perfilButton")
 
 iconBox.onclick = function() {
     iconBox.classList.toggle("active")
@@ -17,9 +18,11 @@ profileIcon.onclick = function() {
     subMenu.classList.toggle("active")
     if(idUser == undefined) {
         dashBtn.style.display = "none"
+        perfilBtn.style.display = "none"
     }else {
         loginBtn.style.display = "none"
         dashBtn.style.display = "block"
+        perfilBtn.style.display = "block"
     }
 }
 
@@ -31,7 +34,7 @@ document.onclick = function(e) {
     }
 }
 
-function sair() {
+function logout() {
     sessionStorage.clear()
     window.location = "../index.html"
 }
