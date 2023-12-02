@@ -15,11 +15,19 @@ function buscarDados() {
       if (resposta.ok) {
         resposta.json().then(json => {
           console.log(json)
-          nomeUser.innerHTML = json[0].nome,
-          qtdTentativa.innerHTML = json[0].totalTentativas,
-          qtdAcerto.innerHTML = json[0].maiorPontuacao,
-          orgTorce.innerHTML = json[0].qualOrgTorce,
-          jogoFav.innerHTML = json[0].jogoFav
+          if(json.pontuacaoMax == null) {
+            nomeUser.innerHTML = json.nomeUsuario,
+            qtdTentativa.innerHTML = json.totalTentativa,
+            qtdAcerto.innerHTML = 0,
+            orgTorce.innerHTML = json.orgTorce,
+            jogoFav.innerHTML = json.jogoFavorito
+          }else {
+            nomeUser.innerHTML = json.nomeUsuario,
+            qtdTentativa.innerHTML = json.totalTentativa,
+            qtdAcerto.innerHTML = json.pontuacaoMax,
+            orgTorce.innerHTML = json.orgTorce,
+            jogoFav.innerHTML = json.jogoFavorito
+          }
         })
       } else {
         throw "Houve um erro ao enviar o formulario!";

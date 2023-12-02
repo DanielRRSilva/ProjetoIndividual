@@ -55,6 +55,9 @@ function enviarForm() {
           if(resposta.status == 401) {
             mensagem.innerHTML = `Um usuário não pode enviar mais de um formulário!`
             alerta.style.display = "flex"
+            setTimeout(() => {
+              alerta.style.display = "none"
+          }, 3000)
           }else {
             throw "Houve um erro ao enviar o formulario!";
           }

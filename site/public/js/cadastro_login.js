@@ -20,71 +20,6 @@ function irBannerCadastro() {
     bannerLogin.style.marginLeft = "-50%"
 }
 
-// inputEmailLogin.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "1"
-//     setaSenhaLogin.style.opacity = "0"
-//     setaUserNameCadastro.style.opacity = "0"
-//     setaEmailCadastro.style.opacity = "0"
-//     setaSenhaCadastro.style.opacity = "0"
-//     setaConfirmaSenhaCadastro.style.opacity = "0"
-// })
-
-// inputSenhaLogin.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "0"
-//     setaSenhaLogin.style.opacity = "1"
-//     setaUserNameCadastro.style.opacity = "0"
-//     setaEmailCadastro.style.opacity = "0"
-//     setaSenhaCadastro.style.opacity = "0"
-//     setaConfirmaSenhaCadastro.style.opacity = "0"
-// })
-
-// inputUserNameCadastro.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "0"
-//     setaSenhaLogin.style.opacity = "0"
-//     setaUserNameCadastro.style.opacity = "1"
-//     setaEmailCadastro.style.opacity = "0"
-//     setaSenhaCadastro.style.opacity = "0"
-//     setaConfirmaSenhaCadastro.style.opacity = "0"
-// })
-
-// inputEmailUserCadastro.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "0"
-//     setaSenhaLogin.style.opacity = "0"
-//     setaUserNameCadastro.style.opacity = "0"
-//     setaEmailCadastro.style.opacity = "1"
-//     setaSenhaCadastro.style.opacity = "0"
-//     setaConfirmaSenhaCadastro.style.opacity = "0"
-// })
-
-// inputSenhaUserCadastro.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "0"
-//     setaSenhaLogin.style.opacity = "0"
-//     setaUserNameCadastro.style.opacity = "0"
-//     setaEmailCadastro.style.opacity = "0"
-//     setaSenhaCadastro.style.opacity = "1"
-//     setaConfirmaSenhaCadastro.style.opacity = "0"
-// })
-
-// inputConfirmarSenhaUserCadastro.addEventListener("focus", () => {
-//     setaEmailLogin.style.opacity = "0"
-//     setaSenhaLogin.style.opacity = "0"
-//     setaUserNameCadastro.style.opacity = "0"
-//     setaEmailCadastro.style.opacity = "0"
-//     setaSenhaCadastro.style.opacity = "0"
-//     setaConfirmaSenhaCadastro.style.opacity = "1"
-// })
-
-// document.addEventListener("click", (e) => {
-//     if (!inputEmailLogin.contains(e.target) && !inputSenhaLogin.contains(e.target) && !inputConfirmarSenhaUserCadastro.contains(e.target) && !inputSenhaUserCadastro.contains(e.target) && !inputEmailUserCadastro.contains(e.target) && !inputUserNameCadastro.contains(e.target)) {
-//         setaEmailLogin.style.opacity = "0"
-//         setaSenhaLogin.style.opacity = "0"
-//         setaUserNameCadastro.style.opacity = "0"
-//         setaEmailCadastro.style.opacity = "0"
-//         setaSenhaCadastro.style.opacity = "0"
-//         setaConfirmaSenhaCadastro.style.opacity = "0"
-//     }
-// })
-
 function cadastrar() {
 
     var userVar = userName.value
@@ -93,10 +28,10 @@ function cadastrar() {
     var confirmarSenha = confirmarSenhaUser.value
 
     if (userVar == "" && emailVar == "" && senhaVar == "" && confirmarSenha == "") {
-        mensagem.innerHTML =`Nenhum campo preenchido!!!`
+        mensagem.innerHTML = `Nenhum campo preenchido!!!`
         alerta.style.display = "flex"
     } else if (userVar == "") {
-        mensagem.innerHTML =`O campo do User Name é obrigatório!`
+        mensagem.innerHTML = `O campo do User Name é obrigatório!`
         alerta.style.display = "flex"
     } else if (userVar.match(/[0-9]/ig) || userVar.length < 3) {
         mensagem.innerHTML = `Caracteres Inválidos no User Name!`
@@ -120,16 +55,12 @@ function cadastrar() {
         mensagem.innerHTML = `A confirmação da senha não está igual!`
         alerta.style.display = "flex"
     } else {
-        mensagem.innerHTML = `O cadastro foi efetuado!`
-        alerta.style.display = "flex"
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 userServer: userVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
@@ -137,12 +68,17 @@ function cadastrar() {
         })
             .then(function (resposta) {
                 console.log("resposta: ", resposta);
-    
+
                 if (resposta.ok) {
                     setTimeout(() => {
+                        mensagem.innerHTML = `O cadastro foi efetuado!`
+                        alerta.style.display = "flex"
                         bannerLogin.style.marginLeft = "0"
                         sessionStorage.clear()
-                    }, "500")
+                        setTimeout(() => {
+                            alerta.style.display = "none"
+                        }, 3000)
+                    }, 1000)
                 } else {
                     if (resposta.status == 401) {
                         alert(`O email cadastrado já existe!`)
@@ -154,12 +90,12 @@ function cadastrar() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-            return false;
-        }
-        setTimeout(()=> {
-            alerta.style.display = "none"
-        },3000)
+        return false;
     }
+    setTimeout(() => {
+        alerta.style.display = "none"
+    }, 3000)
+}
 
 function logar() {
     var emailVar = emailLoginUser.value
@@ -168,7 +104,7 @@ function logar() {
     if (emailVar == "" || senhaVar == "") {
         mensagem.innerHTML = `Os campos estão vazios!`
         alerta.style.display = "flex"
-    }else {
+    } else {
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -180,10 +116,10 @@ function logar() {
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-    
+
             if (resposta.ok) {
                 console.log(resposta);
-    
+
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -204,7 +140,7 @@ function logar() {
         })
         return false;
     }
-    setTimeout(()=> {
+    setTimeout(() => {
         alerta.style.display = "none"
-    },3000)
+    }, 3000)
 }
