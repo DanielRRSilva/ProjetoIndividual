@@ -19,7 +19,6 @@ insert into quiz values
 
 create table formulario(
 idFormulario int primary key auto_increment,
-nome varchar(45),
 dtNasc date,
 genero varchar(20),
 jogou char(3),
@@ -51,6 +50,9 @@ fkQuiz int,
 fkUsuario int,
 fkTentativa int,
 primary key(idPontuacao, fkQuiz, fkUsuario, fkTentativa),
+constraint foreign key (fkUsuario) references usuario(idUsuario),
+constraint foreign key (fkQuiz) references tentativa(fkQuiz),
+constraint foreign key (fkTentativa) references tentativa(idTentativa),
 pontuacao int
 );
 
